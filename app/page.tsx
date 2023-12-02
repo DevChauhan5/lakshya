@@ -1,10 +1,21 @@
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
+import About from "@/components/main/About"
+import Days from "@/components/main/Days"
+import Gallery from "@/components/main/Gallery"
+import Hero from "@/components/main/Hero"
+import Ourteam from "@/components/main/Ourteam"
+import Sponsors from "@/components/main/Sponsors"
 
-export default function Home() {
+const page = () => {
   return (
-    <main>
-      
-    </main>
+    <>
+    <Hero />
+    <Days />
+    <About />
+    <Gallery />
+    <Sponsors />
+    <Ourteam />
+    </>
   )
 }
+
+export default page
