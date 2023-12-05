@@ -34,21 +34,24 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-full flex items-center justify-between p-2 border-black shadow-md">
-      <Image src="/next.svg" alt="Lakshya'24" width={100} height={100} />
-      <div className="hidden md:flex justify-center gap-4">
+    <>
+    <nav className=" bg-white w-3/12 h-screen max-h-screen shadow-md">
+      <div className="flex flex-col items-start justify-center text-left space-y-7 gap-4 pt-[3em] px-[2em] pb-p[2em]">
         {links.map((link) => (
-          <Link href={link.href}
+          <Link 
+          className="text-3xl text-black p-0 hover:bg-black hover:text-white hover:tracking-widest duration-200 transition-all ease-in delay-100"
+          href={link.href}
             key={link.name}
           >
             {link.name}
           </Link>
         ))}
       </div>
-      <Button className="hidden md:block">Register Now!</Button>
+      {/* <Button className="hidden md:block">Register Now!</Button>
       <div className="md:hidden">
         <RiMenu4Fill size={30} />
-      </div>
+      </div> */}
     </nav>
+    </>
   )
 }
