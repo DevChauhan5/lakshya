@@ -61,7 +61,7 @@ const Days = () => {
   }, []);
 
   return (
-    <section className="">
+    <section id="days" className="">
       <div ref={triggerRef} className="perspective">
         <div ref={perspectiveRef} className="perspective-inner">
           {data.map((project, index) => (
