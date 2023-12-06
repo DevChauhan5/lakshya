@@ -7,13 +7,13 @@ import Sponsors from "@/components/main/Sponsors"
 
 const page = () => {
   return (
-    <>
-    <Hero />
-    <Days />
-    <About />
-    <Gallery />
-    <Sponsors />
-    <Ourteam />
+    <>     
+      <Hero />
+      <Days />
+      <About />
+      <Gallery />
+      <Sponsors />
+      <Ourteam />
     </>
   )
 }
