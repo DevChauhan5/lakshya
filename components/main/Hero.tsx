@@ -5,6 +5,7 @@ import gsap from "gsap"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import '@/app/globals.css'
+import ReactPlayer from "react-player"
 
 
 const bebas = Bebas_Neue({
@@ -22,6 +23,7 @@ const Hero = () => {
   const heroText = useRef(null)
   const [isTransparent, setIsTransparent] = useState<boolean>(true);
   const registerButtonRef = useRef(null)
+  const [isPlaying, setIsPlaying] = useState<boolean>(false)
 
   useEffect(() => {
     page.current.addEventListener('mousemove', (dets: any) => {
@@ -46,6 +48,13 @@ const Hero = () => {
       gsap.to(heroText.current, {
         
       })
+    })
+
+    registerButtonRef.current.addEventListener('mouseenter', () => {
+      setIsPlaying(true)
+    })
+    registerButtonRef.current.addEventListener('mouseleave', () => {
+      setIsPlaying(false)
     })
   }, [])
 
@@ -92,6 +101,13 @@ const Hero = () => {
         <Link ref={registerButtonRef} href="/register" className="btn-91 -translate-y-6 md:-translate-y-10 z-[51] cursor-pointer text-3xl">
           <span onClick={()=> setIsTransparent(true)}>Register Now!</span> 
         </Link>
+        {isPlaying && (<ReactPlayer
+          url="/register.mp3"
+          playing={isPlaying}
+          volume={0.8}
+          width={0}
+          height={0}
+        />)}
       </div>
     </section>
   )

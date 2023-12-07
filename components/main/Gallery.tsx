@@ -4,6 +4,7 @@ import styles from '@/styles/page.module.scss'
 import Image from 'next/image';
 import Lenis from '@studio-freight/lenis'
 import { useTransform, useScroll, motion } from 'framer-motion';
+import ReactPlayer from 'react-player';
 
 const images = [
   "1.jpg",
@@ -21,8 +22,8 @@ const images = [
 ]
 
 export default function Home() {
-  
   const gallery = useRef(null);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false)
   const [dimension, setDimension] = useState({width:0, height:0});
 
   const { scrollYProgress } = useScroll({
@@ -34,6 +35,8 @@ export default function Home() {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3])
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25])
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3])
+  const galleryRef = useRef(null);
+
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -51,21 +54,41 @@ export default function Home() {
     requestAnimationFrame(raf);
     resize();
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsPlaying(entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+  
+    if (galleryRef.current) {
+      observer.observe(galleryRef.current);
+    }
+  
+
     return () => {
       window.removeEventListener("resize", resize);
+      if (galleryRef.current) {
+        observer.unobserve(galleryRef.current);
+      }
     }
   }, [])
 
   return (
-    <main className={styles.main}>
-      <div className={styles.spacer}></div>
+    <main ref={galleryRef} className={styles.main}>
       <div ref={gallery} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y}/>
         <Column images={[images[3], images[4], images[5]]} y={y2}/>
         <Column images={[images[6], images[7], images[8]]} y={y3}/>
         <Column images={[images[9], images[10], images[11]]} y={y4}/>
+      {isPlaying && (<ReactPlayer
+          url="/gallery-audio.mp3"
+          playing={isPlaying}
+          volume={0.8}
+          width={0}
+          height={0}
+        />)}
       </div>
-      <div className={styles.spacer}></div>
     </main>
   )
 }
@@ -77,7 +100,7 @@ const Column = ({images, y}: {images:any, y:any}) => {
       style={{y}}
       >
       {
-        images.map( (src:string, i:number) => {
+        images.map( (src:string, i:any) => {
           return <div key={i} className={styles.imageContainer}>
             <Image 
               src={`/images/${src}`}

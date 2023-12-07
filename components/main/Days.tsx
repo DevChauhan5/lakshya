@@ -49,7 +49,7 @@ const days = [
   }
 ]
 
-export default function Days() {
+export default function Home() {
 
   const [modal, setModal] = useState({active: false, index: 0})
 
