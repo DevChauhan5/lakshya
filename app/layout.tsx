@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${bebas.className} scroll-smooth bg-black text-white`}>
-        <Navbar />
+      <Navbar />
         <div className="md:w-[96.5%] md:absolute z-0 md:right-0">
           {children}
         </div>

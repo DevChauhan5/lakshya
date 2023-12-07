@@ -51,7 +51,7 @@ export default function Navbar() {
         }
         </div>
       </div>
-      <div className={`fixed ${navisOpen ? 'left-0' : '-left-[380px] w-0'} block w-full bg-white md:w-[350px] min-w-[200px] z-[60] top-0 pt-16 md:pt-0 right-auto text-left h-full max-h-screen bottom-auto justify-between transition-all duration-300 ease-in-out delay-150`}>
+      <div className={`fixed ${navisOpen ? 'left-0' : '-translate-x-[380px] hidden'} block w-full bg-white md:w-[350px] min-w-[200px] z-[60] top-0 pt-16 md:pt-0 right-auto text-left h-full max-h-screen bottom-auto justify-between transition-all duration-300 ease-in-out delay-150`}>
         <div className="flex flex-col items-start justify-center text-left space-y-6 gap-4 pt-[2em] px-[2em] pb-p[2em]">
           {links.map((link) => (
             <Link

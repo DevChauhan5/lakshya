@@ -11,8 +11,8 @@ const About = () => {
         />
       </div>
       <div className='w-full lg:w-1/2 text-justify'>
-        <h1 className='text-3xl font-semibold mb-6'>About Lakshya</h1>
-        <p className=''> Lakshya is an eagerly anticipated event held annually at our college. This exciting and vibrant festival offers a diverse range of activities and events for students to participate in, showcasing their skills and talents in a wide variety of fields. The festival encompasses technical, cultural, sports and e-sports events, providing opportunities for students to compete, learn, and  explore new areas of interest.
+        <h1 className='text-5xl font-semibold mb-6'>About Lakshya</h1>
+        <p className='text-xl'> Lakshya is an eagerly anticipated event held annually at our college. This exciting and vibrant festival offers a diverse range of activities and events for students to participate in, showcasing their skills and talents in a wide variety of fields. The festival encompasses technical, cultural, sports and e-sports events, providing opportunities for students to compete, learn, and  explore new areas of interest.
           <br /><br />
           Lakshya is a night-time festival that is designed to be entertaining and engaging for all attendees. The festival kicks off in the evening and runs late into the night, with a range of activities and events taking place throughout the evening. One of the highlights of the festival is the celebrity DJ party, which promises to be an unforgettable experience for all who attend.
           <br /><br />

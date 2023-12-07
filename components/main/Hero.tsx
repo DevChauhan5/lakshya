@@ -55,6 +55,11 @@ const Hero = () => {
       duration: 0.5,
       mixblendMode: 'multiply'
     })
+    gsap.to(registerButtonRef.current, {
+      backgroundColor: 'blue',
+      duration: 0.5,
+      color: 'white',
+    })
     setIsTransparent(!isTransparent)
   }
 
@@ -83,9 +88,9 @@ const Hero = () => {
         >
           <span ref={heroText}>Lakshya'24</span>
         </span>
-        <p className="-translate-y-14 md:-translate-y-32 md:tracking-[.5em] text-xl cursor-pointer bg-white text-black pl-3.5 pr-2 py-1">Colors of Unity, Notes of Diversity</p>
+        <p className="-translate-y-14  lg:-translate-y-32  md:tracking-[.5em] text-xl cursor-pointer bg-white text-black pl-3.5 pr-2 py-1 ">Colors of Unity, Notes of Diversity</p>
         <Link ref={registerButtonRef} href="/register" className="btn-91 -translate-y-6 md:-translate-y-10 z-[51] cursor-pointer text-3xl">
-          <span>Register Now!</span>
+          <span onClick={()=> setIsTransparent(true)}>Register Now!</span> 
         </Link>
       </div>
     </section>
