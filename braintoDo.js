@@ -2,7 +2,7 @@
 
 // https://www.youtube.com/watch?v=9Ns9MMzVAp0 - Mouse follow with images
 
-// To Include locomotive.js - smooth scrolling 
+// To Include locomotive.js - smooth scrolling
 
 // https://www.youtube.com/watch?v=Yp9wTL3kcS4
 
@@ -20,3 +20,8 @@
 // https://www.youtube.com/watch?v=rODuJiQQL9I
 // https://www.youtube.com/watch?v=PrQeeUt49f4
   
+
+// AWESSOME Image galley source:public/images/12.jpg public/images/11.jpg public/images/10.jpg public/images/9.jpg public/images/8.jpg public/images/7.jpg public/images/6.jpg public/images/4.jpg public/images/3.jpg public/images/2.jpg public/images/1.jpg public/images/5.jpg
+
+
+// Event Section:- Outdoor Sports, Indoor Sports, E - Sports, Cultural, Knowledge, Technical, Fun, Gym !

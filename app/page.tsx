@@ -9,6 +9,7 @@ import Sponsors from "@/components/main/Sponsors"
 import Loading from "./loading"
 import { useEffect, useState } from "react"
 import gsap from "gsap"
+import Lenis from '@studio-freight/lenis'
 
 export default function Home(){
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -24,6 +25,18 @@ export default function Home(){
     gsap.delayedCall(3, () => setFadeLoader(true));
   }, []);
 
+  useEffect( () => {
+    const lenis = new Lenis()
+
+    function raf(time:any) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  })
+
+
   return (
     <>     
     {!isLoaded && <Loading fade={fadeLoader} />}
@@ -32,7 +45,7 @@ export default function Home(){
       <About /> 
       <Gallery /> 
       <Sponsors />
-      <Ourteam />
+      <Ourteam/>
     </>
   )
 }
