@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
-import { GoArrowLeft } from "react-icons/go";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useState } from "react";
 import { Bebas_Neue } from "next/font/google";
 
@@ -43,7 +43,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-screen">
-      <div className="md:hidden flex justify-between items-center bg-black fixed w-full top-0 z-[65] p-4 px-[2em]">
+      <div className="flex md:hidden justify-between items-center bg-black fixed w-screen top-0 z-[65] py-4 px-[2em]">
         <h1 className={`${bebas.className} text-2xl`}>Lakshya'24</h1>
         <div className="cursor-pointer" onClick={()=> setNavisOpen(!navisOpen)}>
         {
@@ -51,8 +51,8 @@ export default function Navbar() {
         }
         </div>
       </div>
-      <div className={`fixed ${navisOpen ? 'left-0' : '-translate-x-[380px] hidden'} block w-full bg-white md:w-[350px] min-w-[200px] z-[60] top-0 pt-16 md:pt-0 right-auto text-left h-full max-h-screen bottom-auto justify-between transition-all duration-300 ease-in-out delay-150`}>
-        <div className="flex flex-col items-start justify-center text-left space-y-6 gap-4 pt-[2em] px-[2em] pb-p[2em]">
+      <div className={`${navisOpen ? 'left-0' : '-left-[400px] overfl'} fixed  block w-screen bg-white md:w-[350px] z-[60] top-0 pt-16 md:pt-0 text-left h-full justify-between transition-all duration-300 ease-in-out delay-150`}>
+        <div className={`flex  flex-col items-start justify-center text-left space-y-6 gap-4 pt-[2em] px-[2em] pb-p[2em]`}>
           {links.map((link) => (
             <Link
               className="text-5xl md:text-4xl text-black p-0 hover:bg-black hover:text-white hover:tracking-widest duration-200 transition-all ease-in delay-75"
@@ -74,7 +74,7 @@ export default function Navbar() {
         onClick={() => setNavisOpen(!navisOpen)}
       >
         <img
-          src="https://t3.ftcdn.net/jpg/01/13/70/24/360_F_113702442_L9YmmYcQQqyAqTsewyQuBIsqIfmIdhVp.jpg" alt="Lakshya Logo"
+          src="/logo.png" alt="Lakshya Logo"
           className="w-[2.5vw] h-[2.5vw] rounded-full" />
         {
           navisOpen ? (
@@ -82,7 +82,7 @@ export default function Navbar() {
               size={20}
             />
           ) : (
-            <RxHamburgerMenu
+            <GoArrowRight
               size={20}
             />
           )

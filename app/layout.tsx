@@ -26,8 +26,8 @@ export default function RootLayout({
       <Navbar />
         <div className="md:w-[96.5%] md:absolute z-0 md:right-0">
           {children}
+          <Footer />
         </div>
-        <Footer />
         <MusicPlayer />
       </body>
     </html>
