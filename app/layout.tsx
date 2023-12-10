@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/footnav/Navbar'
 import Footer from '@/components/footnav/Footer'
 import MusicPlayer from '@/components/addons/MusicPlayer'
+import Credit from '@/components/addons/Credit'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <div className="md:w-[96.5%] md:absolute z-0 md:right-0">
           {children}
           <Footer />
+          <Credit />
         </div>
         <MusicPlayer />
       </body>

@@ -145,7 +145,7 @@ export default function Home() {
   })
 
   return (
-    <main ref={container} className={`relative `}>
+    <main ref={container} className={`relative border-b-[1px] border-white`}>
       {
         committees.map( (committee:any, i:number) => {
           const targetScale = 1 - ( (committees.length - i) * 0.05);

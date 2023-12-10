@@ -76,7 +76,7 @@ const Hero = () => {
   return (
     <section id="hero" ref={page} className="h-screen overflow-hidden">
       <div ref={cursor} className="scale-0 opacity-0 z-50 fixed bg-purple-600 text-white p-2">
-        <h1 className={`${bebas.className} text-3xl hidden md:block`}>👆🏼 Click Me!</h1>
+        <h1 className={` text-3xl hidden md:block`}>👆🏼 Click Me!</h1>
       </div>
 
       <video
@@ -93,7 +93,7 @@ const Hero = () => {
         onClick={handleheroAnimation}
       >
         <span
-          className={`${bebas.className} cursor-pointer text-[24vw]`}
+          className={`cursor-pointer text-[24vw]`}
         >
           <span ref={heroText}>Lakshya'24</span>
         </span>

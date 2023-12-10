@@ -72,7 +72,7 @@ export default function Sponsors() {
   }, []);
 
   return (
-    <main id='sponsors' className='mb-20 select-none  text-center gap-20 w-screen border-white border-t-[.5px] border-b-[.5px]'>
+    <main id='sponsors' className='mb-20 select-none  text-center gap-20 w-full border-white border-t-[.5px] border-b-[.5px] overflow-hidden'>
       <h1 className='text-5xl py-12 md:text-7xl w-full'>Sponsors @ Lakshya'24</h1>
       <div ref={logosRef} className="logos bg-white">
         <div className="logos-wrap">
