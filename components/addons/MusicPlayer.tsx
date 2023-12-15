@@ -9,8 +9,9 @@ const MusicPlayer: React.FC = () => {
 
 
   return (
-    <div className="fixed bottom-8 right-8 cursor-pointer z-[70]">
+    <div className="fixed bottom-8 right-8 z-[70]">
       <div
+      className='music'
         onClick={() => setIsPlaying(!isPlaying)}
       >
         <div className='bg-black border-2 border-white rounded-full w-12 h-12 flex justify-center items-center'>

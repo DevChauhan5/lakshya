@@ -24,6 +24,10 @@ export default function Navbar() {
       href: "/#days",
     },
     {
+      name: "Events",
+      href: "/#events",
+    },
+    {
       name: "About",
       href: "/#about",
     },
@@ -42,9 +46,9 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="w-screen">
-      <div className="flex md:hidden justify-between items-center bg-black fixed w-screen top-0 z-[65] py-4 px-[2em]">
-        <h1 className={`${bebas.className} text-2xl`}>Lakshya'24</h1>
+    <nav className="w-screen ">
+      <div className="shadow-md shadow-violet-500 flex md:hidden justify-between items-center bg-black fixed w-screen top-0 z-[65] py-3 px-[2em]">
+        <h1 className={`text-2xl`}>Lakshya'24</h1>
         <div className="cursor-pointer" onClick={()=> setNavisOpen(!navisOpen)}>
         {
           navisOpen ? <RxCross1 size={20} /> : <RxHamburgerMenu size={20} />
@@ -70,7 +74,7 @@ export default function Navbar() {
         </div>
       </div>
       <div
-        className={`cursor-pointer h-full w-[3.5%] fixed top-0 ${navisOpen ? "left-[350px] " : "left-0"} z-[60] hidden bg-black text-white md:flex flex-col items-center justify-between pt-[2em] pb-[2em] transition-all duration-300 ease-in-out delay-150`}
+        className={`shadow-xl shadow-yellow-400  cursor-pointer h-full w-[3.5%] fixed top-0 ${navisOpen ? "close left-[350px] shadow-none" : "left-0 open"} z-[60] hidden bg-black text-white md:flex flex-col items-center justify-between pt-[2em] pb-[2em] transition-all duration-300 ease-in-out delay-150`}
         onClick={() => setNavisOpen(!navisOpen)}
       >
         <img

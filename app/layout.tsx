@@ -5,6 +5,9 @@ import Navbar from '@/components/footnav/Navbar'
 import Footer from '@/components/footnav/Footer'
 import MusicPlayer from '@/components/addons/MusicPlayer'
 import Credit from '@/components/addons/Credit'
+import Cursor from '@/components/addons/Cursor'
+import { Provider } from 'react-redux'
+import {store} from '@/app/store'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -23,7 +26,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${bebas.className} scroll-smooth bg-black text-white`}>
+      <body className={`${bebas.className} cursor-none scroll-smooth bg-black text-white`}>
+      <Cursor />
       <Navbar />
         <div className="md:w-[96.5%] md:absolute z-0 md:right-0">
           {children}

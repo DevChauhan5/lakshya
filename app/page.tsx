@@ -6,25 +6,13 @@ import Gallery from "@/components/main/Gallery"
 import Hero from "@/components/main/Hero"
 import Ourteam from "@/components/main/Ourteam"
 import Sponsors from "@/components/main/Sponsors"
-import Loading from "./loading"
-import { useEffect, useState } from "react"
-import gsap from "gsap"
+import Events from "@/components/main/Events";
+import { useEffect } from "react"
 import Lenis from '@studio-freight/lenis'
+import ScrollFun from "@/components/addons/ScrollFun";
+import ImageFun from "@/components/addons/ImageFun";
 
 export default function Home(){
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [fadeLoader, setFadeLoader] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (fadeLoader) {
-      gsap.delayedCall(0.5, () => setIsLoaded(true));
-    }
-  }, [fadeLoader]);
-
-  useEffect(() => {
-    gsap.delayedCall(3, () => setFadeLoader(true));
-  }, []);
-
   useEffect( () => {
     const lenis = new Lenis()
 
@@ -36,16 +24,17 @@ export default function Home(){
     requestAnimationFrame(raf)
   })
 
-
   return (
-    <>     
-    {!isLoaded && <Loading fade={fadeLoader} />}
+    <>
       <Hero />
-      <Days />
+      <Days /> 
+      <Events /> 
       <About /> 
       <Gallery /> 
       <Sponsors />
-      <Ourteam/>
+      <Ourteam/> 
+      {/* <ImageFun />
+      <ScrollFun /> */}
     </>
   )
 }
