@@ -93,17 +93,11 @@ export default function Footer() {
         ref={linkContainerRef}
         className='no-scrollbar tracking-wider whitespace-nowrap flex flex-row gap-8 text-lg py-6 px-8 overflow-x-auto border-b-[1px] border-white w-full'
       >
-        <Link href="/">Home</Link>
-        <Link href="/">Outdoor-Sports Events</Link>
-        <Link href="/">Indoor-Sports Events</Link>
         <Link href="/">E-Sports Events</Link>
         <Link href="/">Cultural Events</Link>
         <Link href="/">Back↑top</Link>
-        <Link href="/">Knowledge Events</Link>
-        <Link href="/">Technical Events</Link>
-        <Link href="/">Fun Events</Link>
-        <Link href="/">Gym Events</Link>
-        <Link href="/">Our Team</Link>
+        <Link href="/">Knowledge & Fun Events</Link>
+        <Link href="/">Sports & Gymnasium Events</Link>
       </div>
       <div className='w-full flex flex-col text-center md:flex-row items-center justify-center md:justify-between gap-4  px-8 py-6 border-b-[1px] border-white'>
         <h2 className=''>© Copyright 2023 Poornima University. <br />All rights reserved.</h2>

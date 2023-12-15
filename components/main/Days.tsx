@@ -1,12 +1,36 @@
 'use client';
 
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
-import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
 export default function Home(){
+  gsap.registerPlugin(ScrollTrigger);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const elements = gsap.utils.toArray(sectionRef.current.children);
+
+    gsap.fromTo(elements, {
+      autoAlpha: 0, // start at 0 opacity
+    }, {
+      autoAlpha: 1, // animate to 1 opacity
+      duration: 1, // duration of the animation
+      stagger: 0.1, // stagger the start of each animation
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 40%', // start the animation when the top of the section hits 40% of the viewport
+      },
+    });
+  }, []);
+  
   return (
-    <section id="days" className="bg-black p-4 md:p-8">
+    <section
+    ref={sectionRef}
+    id="days" className="bg-black p-4 md:p-8"
+    >
       <div className="mx-auto max-w-5xl">
         <Link
           heading="Day 1"
