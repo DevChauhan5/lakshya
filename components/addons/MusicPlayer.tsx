@@ -1,10 +1,11 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import ReactPlayer from 'react-player';
 import '@/app/globals.css'
+import MusicContext from '@/musicContext';
 
 const MusicPlayer: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const {isPlaying, setIsPlaying} = useContext(MusicContext);
 
 
 

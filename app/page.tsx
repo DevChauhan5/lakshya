@@ -7,12 +7,16 @@ import Hero from "@/components/main/Hero"
 import Ourteam from "@/components/main/Ourteam"
 import Sponsors from "@/components/main/Sponsors"
 import Events from "@/components/main/Events";
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Lenis from '@studio-freight/lenis'
 import ScrollFun from "@/components/addons/ScrollFun";
 import ImageFun from "@/components/addons/ImageFun";
+import MusicContext from "@/musicContext";
+import MusicPlayer from "@/components/addons/MusicPlayer";
 
 export default function Home(){
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+
   useEffect( () => {
     const lenis = new Lenis()
 
@@ -26,7 +30,8 @@ export default function Home(){
 
   return (
     <>
-      <Hero />
+    <MusicContext.Provider value={{ isPlaying, setIsPlaying }}>
+    <Hero />
       <Days /> 
       <Events /> 
       <About /> 
@@ -35,6 +40,8 @@ export default function Home(){
       <Ourteam/> 
       {/* <ImageFun />
       <ScrollFun /> */}
+    <MusicPlayer/>
+    </MusicContext.Provider>
     </>
   )
 }

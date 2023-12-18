@@ -3,11 +3,8 @@ import { Bebas_Neue} from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/footnav/Navbar'
 import Footer from '@/components/footnav/Footer'
-import MusicPlayer from '@/components/addons/MusicPlayer'
 import Credit from '@/components/addons/Credit'
 import Cursor from '@/components/addons/Cursor'
-import { Provider } from 'react-redux'
-import {store} from '@/app/store'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -34,7 +31,7 @@ export default function RootLayout({
           <Footer />
           <Credit />
         </div>
-        <MusicPlayer />
+        
       </body>
     </html>
   )

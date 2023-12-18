@@ -21,7 +21,7 @@ export default function Home(){
       stagger: 0.1, // stagger the start of each animation
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top 40%', // start the animation when the top of the section hits 40% of the viewport
+        start: 'top 45%', // start the animation when the top of the section hits 40% of the viewport
       },
     });
   }, []);

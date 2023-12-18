@@ -6,6 +6,7 @@ import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useState } from "react";
 import { Bebas_Neue } from "next/font/google";
+import Image from "next/image";
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -77,9 +78,12 @@ export default function Navbar() {
         className={`shadow-xl shadow-yellow-400  cursor-pointer h-full w-[3.5%] fixed top-0 ${navisOpen ? "close left-[350px] shadow-none" : "left-0 open"} z-[60] hidden bg-black text-white md:flex flex-col items-center justify-between pt-[2em] pb-[2em] transition-all duration-300 ease-in-out delay-150`}
         onClick={() => setNavisOpen(!navisOpen)}
       >
-        <img
-          src="/logo.png" alt="Lakshya Logo"
-          className="w-[2.5vw] h-[2.5vw] rounded-full" />
+        <Image
+          src="/logo.png"
+          alt="Lakshya Logo"
+          width={40}
+          height={40}
+          className="rounded-full" />
         {
           navisOpen ? (
             <GoArrowLeft
