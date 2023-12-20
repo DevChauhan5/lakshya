@@ -34,7 +34,7 @@ export default function Footer() {
     <section className='flex flex-col items-center justify-center px-[2em] py-[1em]border-white overflow-hidden'>
       <main className="flex flex-col lg:flex-row items-center justify-between ">
         <div className='flex flex-col items-center justify-center mt-16 md:mx-12 h-fit w-fit'>
-          <h1 className="text-7xl md:text-9xl tracking-wide font-bold">Lakshya'24</h1>
+          <h1 className="text-7xl md:text-9xl tracking-wide font-bold">Lakshya&apos;24</h1>
           <p className="text-2xl">Annual Fest of Poornima University.</p>
         </div>
         {/* </div> */}
