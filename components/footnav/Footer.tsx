@@ -1,5 +1,6 @@
 'use client'
 
+import { Divider } from '@nextui-org/react';
 import gsap from 'gsap';
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -34,6 +35,7 @@ export default function Footer() {
 
   return (
     <section className='flex flex-col items-center justify-center px-[2em] py-[1em]border-white overflow-hidden'>
+      <Divider className='mt-12'/>
       <main className="flex flex-col lg:flex-row items-center justify-between ">
         <div className='flex flex-col items-center justify-center mt-16 md:mx-12 h-fit w-fit'>
           <h1 className="text-7xl md:text-9xl tracking-wide font-bold">Lakshya&apos;24</h1>
@@ -81,7 +83,7 @@ export default function Footer() {
       </div>
       <div
         ref={linkContainerRef}
-        className='no-scrollbar tracking-wider whitespace-nowrap flex flex-row gap-8 text-lg py-6 px-8 overflow-x-auto border-b-[1px] border-white w-full'
+        className='no-scrollbar tracking-wider whitespace-nowrap flex flex-row gap-8 text-lg py-6 px-8 overflow-x-auto w-full items-center justify-center'
       >
         <Link href="/">E-Sports Events</Link>
         <Link href="/">Cultural Events</Link>
@@ -89,7 +91,8 @@ export default function Footer() {
         <Link href="/">Knowledge & Fun Events</Link>
         <Link href="/">Sports & Gymnasium Events</Link>
       </div>
-      <div className='w-full flex flex-col text-center md:flex-row items-center justify-center md:justify-between gap-4  px-8 py-6 border-b-[1px] border-white'>
+      <Divider className='my-4'/>
+      <div className='w-full flex flex-col text-center md:flex-row items-center justify-center md:justify-between gap-4  px-8 py-6 '>
         <h2 className=''>© Copyright 2023 Poornima University. <br />All rights reserved.</h2>
         <div className='flex gap-4'>
           <Link href='https://www.instagram.com/pulakshya/'>
@@ -100,6 +103,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
+      <Divider className='mt-4'/>
     </section >
   )
 }

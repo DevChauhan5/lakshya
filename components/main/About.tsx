@@ -13,7 +13,7 @@ const About = () => {
     // })
   }, [])
   return (
-    <section id='about' className='flex flex-wrap gap-8 h-fit px-[1.8em] my-16 mx-4 items-center justify-around'>
+    <section id='about' className='bg-black flex flex-wrap gap-8 h-fit px-[1.8em] my-16 mx-4 items-center justify-around'>
       <div className='h-full w-2/3 sm:w-96'>
         <img
           id='aboutimg'

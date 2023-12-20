@@ -81,7 +81,7 @@ export default function Home() {
     <main 
     id='ourteam'
     ref={container} 
-    className={`relative border-b-[1px] border-white`}
+    className={`relative`}
     >
       {
         committees.map( (committee:any, i:number) => {

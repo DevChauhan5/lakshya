@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Credit() {
   return (
-    <div className='mt-8 mb-[72px] md:mb-8 text-center mx-[2em]'>
+    <div className='bg-black pt-8 pb-[72px] md:pb-8 text-center mx-[2em]'>
       <h1 className="py-2 text-3xl tracking-wide flex items-center justify-center leading-none select-none font-semibold">
         <span data-content="Crafted" className="relative block before:content-[attr(data-content)] before:w-full before:z-0 before:block before:absolute before:top-0 before:px-2 before:bottom-0 before:left-0 before:text-center before:text-white before:animate-gradient-background-1">
           <span className="px-2 text-transparent bg-clip-text bg-gradient-to-r from-gradient-1-start to-gradient-1-end animate-gradient-foreground-1">Crafted</span>

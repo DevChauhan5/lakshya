@@ -79,7 +79,7 @@ export default function Navbar() {
         onClick={() => setNavisOpen(!navisOpen)}
       >
         <Image
-          src="/logo.png"
+          src="/nav-icon.png"
           alt="Lakshya Logo"
           width={40}
           height={40}
