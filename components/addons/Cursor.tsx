@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 
 export default function Cursor() {
     const cursorRef = useRef(null);
-    const cursorTextRef = useRef(null);
+    const cursorTextRef = useRef<HTMLDivElement | null>(null);;
 
     useEffect(() => {
         const onMouseMove = (e: any) => {
@@ -24,23 +24,13 @@ export default function Cursor() {
             });
 
             if (e.target.classList.contains('click')) {
-                if (cursorTextRef.current) {
                     (cursorTextRef.current as HTMLDivElement).innerText = 'Click';
-                }
             } else if (e.target.classList.contains('music')) {
-                if (cursorTextRef.current) {
                     (cursorTextRef.current as HTMLDivElement).innerText = 'Play';
-                }
             } else if (e.target.classList.contains('open')) {
-                if (cursorTextRef.current) {
                     (cursorTextRef.current as HTMLDivElement).innerText = 'Open';
                 }
-            }
-
-            if (cursorTextRef.current) {
-                const cursorTextRef = useRef<HTMLDivElement>(null);
                 cursorTextRef.current?.classList.remove('hidden');
-            }
         };
 
         const onMouseLeave = (e:any) => {
