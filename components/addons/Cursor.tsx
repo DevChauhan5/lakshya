@@ -24,14 +24,23 @@ export default function Cursor() {
             });
 
             if (e.target.classList.contains('click')) {
-                cursorTextRef.current.innerText = 'Click';
+                if (cursorTextRef.current) {
+                    (cursorTextRef.current as HTMLDivElement).innerText = 'Click';
+                }
             } else if (e.target.classList.contains('music')) {
-                cursorTextRef.current.innerText = 'Play';
+                if (cursorTextRef.current) {
+                    (cursorTextRef.current as HTMLDivElement).innerText = 'Play';
+                }
             } else if (e.target.classList.contains('open')) {
-                cursorTextRef.current.innerText = 'Open';
+                if (cursorTextRef.current) {
+                    (cursorTextRef.current as HTMLDivElement).innerText = 'Open';
+                }
             }
 
-            cursorTextRef.current.classList.remove('hidden');
+            if (cursorTextRef.current) {
+                const cursorTextRef = useRef<HTMLDivElement>(null);
+                cursorTextRef.current?.classList.remove('hidden');
+            }
         };
 
         const onMouseLeave = (e:any) => {
@@ -41,8 +50,14 @@ export default function Cursor() {
                 ease: "power1.inOut", // Add ease-in-out effect
             });
 
-            cursorTextRef.current.innerText = '';
-            cursorTextRef.current.classList.add('hidden');
+            if (cursorTextRef.current) {
+                (cursorTextRef.current as HTMLDivElement).innerText = '';
+            }
+            if (cursorTextRef.current) {
+                if (cursorTextRef.current) {
+                    (cursorTextRef.current as HTMLDivElement).classList.add('hidden');
+                }
+            }
         };
 
         window.addEventListener('mousemove', onMouseMove);
