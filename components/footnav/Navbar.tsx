@@ -49,7 +49,7 @@ export default function Navbar() {
   return (
     <nav className="w-screen ">
       <div className="shadow-md shadow-violet-500 flex md:hidden justify-between items-center bg-black fixed w-screen top-0 z-[65] py-3 px-[2em]">
-        <h1 className={`text-2xl`}>Lakshya'24</h1>
+        <h1 className={`text-2xl`}>Lakshya&apos;24</h1>
         <div className="cursor-pointer" onClick={()=> setNavisOpen(!navisOpen)}>
         {
           navisOpen ? <RxCross1 size={20} /> : <RxHamburgerMenu size={20} />
@@ -98,7 +98,7 @@ export default function Navbar() {
         <h1
           className={`${bebas.className} text-2xl -rotate-90 mb-7 select-none`}
         >
-          Lakshya'24
+          Lakshya&apos;24
         </h1>
       </div>
     </nav>

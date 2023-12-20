@@ -78,7 +78,7 @@ const Hero = () => {
         <span
           className={`click text-[24vw] z-20`}
         >
-          <span ref={heroText}>Lakshya'24</span>
+          <span ref={heroText}>Lakshya&apos;24</span>
         </span>
         <p className="-translate-y-14  lg:-translate-y-32  md:tracking-[.5em] text-xl click bg-white text-black pl-3.5 pr-2 py-1 z-20">Harmony in diversity, Spectrum of talents</p>
         <Link ref={registerButtonRef} href="/register" className="btn-91 -translate-y-6 md:-translate-y-10 z-[51] click text-3xl">

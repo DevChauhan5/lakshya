@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-export default function () {
+export default function Credit() {
   return (
     <div className='mt-8 mb-[72px] md:mb-8 text-center mx-[2em]'>
       <h1 className="py-2 text-3xl tracking-wide flex items-center justify-center leading-none select-none font-semibold">

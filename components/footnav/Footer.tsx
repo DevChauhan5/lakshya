@@ -34,18 +34,6 @@ export default function Footer() {
     <section className='flex flex-col items-center justify-center px-[2em] py-[1em]border-white overflow-hidden'>
       <main className="flex flex-col lg:flex-row items-center justify-between ">
         <div className='flex flex-col items-center justify-center mt-16 md:mx-12 h-fit w-fit'>
-          {/* <video
-            src="/neon-oceam.mp4"
-            autoPlay
-            loop
-            muted
-            className="absolute w-fit h-fit object-cover"
-          /> */}
-          {/* <div
-            className={`absolute w-fit h-fit top-1/2 flex items-center justify-center flex-col bg-black text-white ${isTransparent ? 'mix-blend-normal' : 'mix-blend-multiply z-40'}`}
-            ref={heroContainer}
-            onClick={handleheroAnimation}
-          > */}
           <h1 className="text-7xl md:text-9xl tracking-wide font-bold">Lakshya'24</h1>
           <p className="text-2xl">Annual Fest of Poornima University.</p>
         </div>
@@ -57,13 +45,13 @@ export default function Footer() {
               <div className='text-lg mx-4 whitespace-pre-line'>
                 Pranav Lata (He/Him),<br />
                 +91-8905907116<br />
-                Co-Chair, Students' Council<br />
+                Co-Chair, Students&apos; Council<br />
                 Poornima University<br /><br />
               </div>
               <div className='text-lg whitespace-pre-line mx-4'>
                 Shourya Mehra (She/her),<br />
                 +91-8770385253<br />
-                Co-Chair, Students' Council<br />
+                Co-Chair, Students&apos; Council<br />
                 Poornima University<br />
               </div>
             </div>
