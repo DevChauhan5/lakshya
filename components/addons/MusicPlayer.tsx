@@ -5,7 +5,7 @@ import '@/app/globals.css'
 import MusicContext from '@/musicContext';
 
 const MusicPlayer: React.FC = () => {
-  const {isPlaying, setIsPlaying} = useContext(MusicContext);
+  const {isPlaying, setIsPlaying} = useContext(MusicContext) || {};
 
 
 
@@ -13,7 +13,7 @@ const MusicPlayer: React.FC = () => {
     <div className="fixed bottom-8 right-8 z-[70]">
       <div
       className='music'
-        onClick={() => setIsPlaying(!isPlaying)}
+        onClick={() => setIsPlaying && setIsPlaying(!isPlaying)}
       >
         <div className='bg-black border-2 border-white rounded-full w-12 h-12 flex justify-center items-center'>
           {isPlaying ?

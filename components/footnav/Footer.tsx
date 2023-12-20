@@ -7,27 +7,29 @@ import { FaInstagram } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
 
 export default function Footer() {
-  // const [isTransparent, setIsTransparent] = useState<boolean>(true);
-  const linkContainerRef = useRef(null);
-  const quicklinkContainerRef = useRef(null);
+  const linkContainerRef = useRef<HTMLDivElement | null>(null);
+  const quicklinkContainerRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const linkContainer = linkContainerRef.current;
     const quicklinkContainer = quicklinkContainerRef.current;
 
-    gsap.to(linkContainer, {
-      scrollLeft: linkContainer.scrollWidth - linkContainer.clientWidth,
-      duration: 16,
-      ease: "power1.inOut",
-      repeat: -1,
-      yoyo: true,
-    });
-    gsap.to(quicklinkContainer, {
-      scrollLeft: quicklinkContainer.scrollWidth - quicklinkContainer.clientWidth,
-      duration: 50,
-      ease: "power1.inOut",
-      repeat: -1,
-      yoyo: true,
-    });
+    if (linkContainer) {
+      gsap.to(linkContainer, {
+        scrollLeft: linkContainer.scrollWidth - linkContainer.clientWidth,
+        duration: 16,
+        ease: "power1.inOut",
+        repeat: -1,
+        yoyo: true,
+      });
+    }
+
+    if (quicklinkContainer) {
+      gsap.to(quicklinkContainer, {
+        scrollLeft: quicklinkContainer.scrollWidth - quicklinkContainer.clientWidth,
+        duration: 50,
+        ease: "power1.inOut",
+      });
+    }
   }, []);
 
   return (

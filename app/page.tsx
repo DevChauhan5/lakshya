@@ -10,7 +10,6 @@ import Events from "@/components/main/Events";
 import { useEffect, useState } from "react"
 import Lenis from '@studio-freight/lenis'
 import ScrollFun from "@/components/addons/ScrollFun";
-import ImageFun from "@/components/addons/ImageFun";
 import MusicContext from "@/musicContext";
 import MusicPlayer from "@/components/addons/MusicPlayer";
 
@@ -38,8 +37,7 @@ export default function Home(){
       <Gallery /> 
       <Sponsors />
       <Ourteam/> 
-      {/* <ImageFun />
-      <ScrollFun /> */}
+      {/* <ScrollFun /> */}
     <MusicPlayer/>
     </MusicContext.Provider>
     </>
