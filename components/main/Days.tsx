@@ -8,10 +8,10 @@ import { FiArrowRight } from "react-icons/fi";
 
 export default function Home(){
   gsap.registerPlugin(ScrollTrigger);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const elements = gsap.utils.toArray(sectionRef.current.children);
+    const elements = sectionRef.current ? gsap.utils.toArray(sectionRef.current.children) : [];
 
     gsap.fromTo(elements, {
       autoAlpha: 0, // start at 0 opacity
