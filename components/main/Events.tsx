@@ -6,7 +6,7 @@ import Card from '@/components/ui/Card'
 const EventCards = () => {
   const events = [
     {
-      url: "/images/1.jpg",
+      url: "/try.gif",
       title: "Cultural",
       id: 1,
       href: "/cultural"

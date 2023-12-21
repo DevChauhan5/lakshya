@@ -85,11 +85,11 @@ export default function Footer() {
         ref={linkContainerRef}
         className='no-scrollbar tracking-wider whitespace-nowrap flex flex-row gap-8 text-lg py-6 px-8 overflow-x-auto w-full items-center justify-center'
       >
-        <Link href="/">E-Sports Events</Link>
-        <Link href="/">Cultural Events</Link>
+        <Link href="/e-sports">E-Sports Events</Link>
+        <Link href="/cultural">Cultural Events</Link>
         <Link href="/">Back↑top</Link>
-        <Link href="/">Knowledge & Fun Events</Link>
-        <Link href="/">Sports & Gymnasium Events</Link>
+        <Link href="/fun-knowledge">Knowledge & Fun Events</Link>
+        <Link href="/sports-gymnasium">Sports & Gymnasium Events</Link>
       </div>
       <Divider className='my-4'/>
       <div className='w-full flex flex-col text-center md:flex-row items-center justify-center md:justify-between gap-4  px-8 py-6 '>

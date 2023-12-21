@@ -6,6 +6,8 @@ import Footer from '@/components/footnav/Footer'
 import Credit from '@/components/addons/Credit'
 import Cursor from '@/components/addons/Cursor'
 import { Providers } from './providers'
+import MusicPlayer from '@/components/addons/MusicPlayer'
+import MusicProvider from '@/components/addons/MusicProvider'
 
 const bebas = Bebas_Neue({
   subsets: ['latin'],
@@ -24,8 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${bebas.className} cursor-none scroll-smooth bg-black text-white`}>
+      <body className={`${bebas.className} cursor-none scroll-smooth bg-black text-white no-scrollbar`}>
         <Providers>
+          <MusicProvider>
           <Cursor />
           <Navbar />
           <div className="dark md:w-[96.5%] md:absolute z-0 md:right-0 bg-black">
@@ -33,6 +36,8 @@ export default function RootLayout({
             <Footer />
             <Credit />
           </div>
+          <MusicPlayer />
+          </MusicProvider>
         </Providers>
       </body>
     </html>

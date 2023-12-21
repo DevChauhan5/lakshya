@@ -10,16 +10,15 @@ import Events from "@/components/main/Events";
 import { useEffect, useState } from "react"
 import Lenis from '@studio-freight/lenis'
 import ScrollFun from "@/components/addons/ScrollFun";
-import MusicContext from "@/musicContext";
 import MusicPlayer from "@/components/addons/MusicPlayer";
+import MobGallery from "@/components/main/MobGallery";
 
-export default function Home(){
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+export default function Home() {
 
-  useEffect( () => {
+  useEffect(() => {
     const lenis = new Lenis()
 
-    function raf(time:any) {
+    function raf(time: any) {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
@@ -28,18 +27,20 @@ export default function Home(){
   })
 
   return (
-    <>
-    <MusicContext.Provider value={{ isPlaying, setIsPlaying }}>
-    <Hero />
-      <Days /> 
-      <Events /> 
-      <About /> 
-      <Gallery /> 
+    <main className="">
+      <Hero />
+      <Days />
+      <Events />
+      <About />
+      <div className="md:hidden">
+        <MobGallery />
+      </div>
+      <div className="hidden md:block">
+        <Gallery />
+      </div>
       <Sponsors />
-      <Ourteam/> 
-      {/* <ScrollFun /> */}
-    <MusicPlayer/>
-    </MusicContext.Provider>
-    </>
+      <Ourteam />
+      <ScrollFun />
+    </main>
   )
 }
