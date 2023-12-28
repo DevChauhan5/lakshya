@@ -9,7 +9,7 @@ const Page = () => {
         <Link href="https://docs.google.com/forms/d/178Vl9c5vtdgr6NZF9AVtYfypy9gJ6NS_1EiikqFIH8c/edit?usp=drivesdk" className="text-center w-full h-full flex items-center justify-center relative"
         target='_blank'
         >
-          <h1 className="text-5xl text-white">Register for Lakshya'24</h1>
+          <h1 className="text-5xl text-white">Register for Lakshya&apos;24</h1>
         </Link>
       </div>
       <div className="relative w-full md:w-1/2 h-3/4 border-1 border-white rounded-2xl overflow-hidden mx-[1.8em] mt-4 md:mt-0">
