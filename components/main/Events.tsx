@@ -1,30 +1,31 @@
 import React from 'react';
 import { gsap } from 'gsap';
 import Card from '@/components/ui/Card'
+import Link from 'next/link';
 
 
 const EventCards = () => {
   const events = [
     {
-      url: "/try.gif",
+      url: "/events/1.gif",
       title: "Cultural",
       id: 1,
       href: "/cultural"
     },
     {
-      url: "/images/2.jpg",
+      url: "/events/2.gif",
       title: "E-Sports",
       id: 2,
       href: "/e-sports"
     },
     {
-      url: "/images/3.jpg",
+      url: "/events/3.gif",
       title: "Fun & Knowledge",
       id: 3,
       href: "/fun-knowledge"
     },
     {
-      url: "/images/4.jpg",
+      url: "/events/4.gif",
       title: "Sports & Gymnasium",
       id: 4,
       href: "/sports-gymnasium"

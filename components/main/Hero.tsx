@@ -12,7 +12,7 @@ const Hero = () => {
   const page = useRef<HTMLDivElement | null>(null)
   const heroContainer = useRef(null)
   const heroText = useRef(null)
-  const iconsRef = useRef<Array<HTMLImageElement>>([]);
+  const [clickHere, setClickHere] = useState<boolean>(true)
   const [isTransparent, setIsTransparent] = useState<boolean>(true);
   const [isbgvideo, setIsbgvideo] = useState<boolean>(false);
   const registerButtonRef = useRef<HTMLButtonElement | null>(null);
@@ -62,6 +62,7 @@ const Hero = () => {
       }
     } else {
       setIsbgvideo(true)
+      setClickHere(false)
       if (setIsPlaying) {
         setIsPlaying(false);
       }
@@ -76,13 +77,33 @@ const Hero = () => {
         ref={heroContainer}
         onClick={handleheroAnimation}
       >
+        {clickHere && (
+          <Image
+          src={'/giphy.gif'} 
+          alt="click here"
+          height={100}
+          width={100}
+          className="absolute top-28 md:top-10 left-4 transform rotate-45"
+          />
+        )}
         <span
           className={`click text-[24vw] z-20`}
         >
           <span ref={heroText}>Lakshya&apos;24</span>
         </span>
+        {clickHere && (
+          <Image
+          src={'/giphy1.gif'} 
+          alt="click here"
+          height={140}
+          width={140}
+          className="absolute bottom-36 md:bottom-38 right-6 md:right-12 transform rotate-42"
+          />
+        )}
         <p className="-translate-y-14  lg:-translate-y-32  md:tracking-[.5em] text-xl click bg-white text-black pl-3.5 pr-2 py-1 z-20">Harmony in diversity, Spectrum of talents</p>
-        <Link href="/register" className="btn-91 -translate-y-6 md:-translate-y-10 z-[51] click text-3xl">
+        <Link href="https://docs.google.com/forms/d/178Vl9c5vtdgr6NZF9AVtYfypy9gJ6NS_1EiikqFIH8c/edit?usp=drivesdk" 
+        target="_blank"
+        className="btn-91 -translate-y-6 md:-translate-y-10 z-[51] click text-3xl">
           <span ref={registerButtonRef} onClick={() => setIsTransparent(true)}>Register Now!</span>
         </Link>
         {registerAud && (<ReactPlayer

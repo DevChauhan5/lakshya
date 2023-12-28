@@ -41,7 +41,7 @@ const MobGallery = () => {
 
     return (
         <>
-            <div className="p-4 text-center ">
+            <div id="gallery" className="p-4 text-center ">
                 <h2 className="text-5xl tracking-wide py-6 font-bold mb-4">Gallery</h2>
                 <div className="grid grid-cols-2 gap-4">
                     {images.map((image, index) => (

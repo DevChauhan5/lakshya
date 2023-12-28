@@ -39,11 +39,11 @@ export default function Navbar() {
     // {
     //   name: "Sponsors",
     //   href: "/#sponsors",
+    //},
+    // {
+    //   name: "Our Team",
+    //   href: "/#ourteam",
     // },
-    {
-      name: "Our Team",
-      href: "/#ourteam",
-    },
   ];
 
   return (
@@ -56,11 +56,11 @@ export default function Navbar() {
         }
         </div>
       </div>
-      <div className={`${navisOpen ? 'left-0' : '-left-[780px]'} fixed w-screen bg-white md:w-[350px] z-[60] top-0 pt-16 md:pt-0 text-left h-full justify-between transition-all duration-300 ease-in-out delay-150`}>
-        <div className={`flex  flex-col items-start justify-center text-left space-y-6 gap-4 pt-[2em] px-[2em] pb-p[2em]`}>
+      <div className={`${navisOpen ? 'left-0' : '-left-[780px]'} fixed w-screen bg-white md:w-[350px] z-[66] top-0 pt-16 md:pt-0 text-left h-full justify-between transition-all duration-300 ease-in-out delay-150`}>
+        <div className={`flex  flex-col items-start justify-center text-left space-y-4 gap-4 pt-[2em] px-[2em] pb-p[2em] duration-200 transition-all ease-in delay-75`}>
           {links.map((link) => (
             <Link
-              className="text-5xl md:text-4xl text-black p-0 hover:bg-black hover:text-white hover:tracking-widest duration-200 transition-all ease-in delay-75"
+              className="text-5xl md:text-4xl text-black w-full p-2 hover:bg-black hover:text-white hover:tracking-[0.5em] hover:text-center rounded-md duration-200 transition-all ease-in delay-75"
               href={link.href}
               key={link.name}
               onClick={() => setNavisOpen(false)}
@@ -75,7 +75,7 @@ export default function Navbar() {
         </div>
       </div>
       <div
-        className={`shadow-xl shadow-yellow-400  cursor-pointer h-full w-[3.5%] fixed top-0 ${navisOpen ? "close left-[350px] shadow-none" : "left-0 open"} z-[60] hidden bg-black text-white md:flex flex-col items-center justify-between pt-[2em] pb-[2em] transition-all duration-300 ease-in-out delay-150`}
+        className={`shadow-xl shadow-purple-600  cursor-pointer h-full w-[3.5%] fixed top-0 ${navisOpen ? "close left-[350px] shadow-none" : "left-0 open"} z-[60] hidden bg-black text-white md:flex flex-col items-center justify-between pt-[2em] pb-[2em] transition-all duration-300 ease-in-out delay-150`}
         onClick={() => setNavisOpen(!navisOpen)}
       >
         <Image

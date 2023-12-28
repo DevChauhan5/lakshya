@@ -39,7 +39,7 @@ export default function Home() {
         <Gallery />
       </div>
     {/* <Sponsors /> */}
-      <Ourteam />
+      {/* <Ourteam /> */}
       {/* <ScrollFun /> */}
     </main>
   )
