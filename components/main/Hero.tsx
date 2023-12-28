@@ -6,6 +6,7 @@ import '@/app/globals.css'
 import ReactPlayer from "react-player"
 import Image from "next/image"
 import MusicContext from "@/musicContext"
+import VideoBg from "../addons/VideoBg"
 
 const Hero = () => {
   const page = useRef<HTMLDivElement | null>(null)
@@ -69,13 +70,7 @@ const Hero = () => {
 
   return (
     <section id="hero" ref={page} className="h-screen overflow-hidden relative">
-      <video
-        src="/main.mp4"
-        autoPlay
-        muted={isbgvideo ? false : true}
-        loop
-        className="absolute w-screen h-screen object-cover"
-      />
+      <VideoBg isbgvideo={isbgvideo}/>
       <div
         className={`relative w-full h-screen flex top-0 flex-col items-center justify-center space-y-12 md:space-y-0 bg-black text-white ${isTransparent ? 'mix-blend-normal' : 'mix-blend-multiply z-40'}`}
         ref={heroContainer}

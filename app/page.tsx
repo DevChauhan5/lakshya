@@ -38,9 +38,9 @@ export default function Home() {
       <div className="hidden md:block">
         <Gallery />
       </div>
-      <Sponsors />
+    {/* <Sponsors /> */}
       <Ourteam />
-      <ScrollFun />
+      {/* <ScrollFun /> */}
     </main>
   )
 }

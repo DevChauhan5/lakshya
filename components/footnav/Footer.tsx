@@ -35,7 +35,7 @@ export default function Footer() {
 
   return (
     <section className='flex flex-col items-center justify-center px-[2em] py-[1em]border-white overflow-hidden'>
-      <Divider className='mt-12'/>
+      <Divider className='mt-12 bg-white'/>
       <main className="flex flex-col lg:flex-row items-center justify-between ">
         <div className='flex flex-col items-center justify-center mt-16 md:mx-12 h-fit w-fit'>
           <h1 className="text-7xl md:text-9xl tracking-wide font-bold">Lakshya&apos;24</h1>
@@ -74,16 +74,8 @@ export default function Footer() {
         </div>
       </main>
       <div
-        ref={quicklinkContainerRef}
-        className='mt-4 no-scrollbar tracking-widest whitespace-nowrap flex flex-row gap-36 text-lg px-8 overflow-x-auto w-full bg-white text-black'
-      >
-        {Array.from({ length: 30 }).map((_, index) => (
-          <h3 key={index}>Quick Links</h3>
-        ))}
-      </div>
-      <div
         ref={linkContainerRef}
-        className='no-scrollbar tracking-wider whitespace-nowrap flex flex-row gap-8 text-lg py-6 px-8 overflow-x-auto w-full items-center justify-center'
+        className='no-scrollbar bg-white text-black tracking-wider whitespace-nowrap flex flex-row gap-8 text-lg py-6 px-8 overflow-x-auto w-full items-center justify-center'
       >
         <Link href="/e-sports">E-Sports Events</Link>
         <Link href="/cultural">Cultural Events</Link>
@@ -91,7 +83,7 @@ export default function Footer() {
         <Link href="/fun-knowledge">Knowledge & Fun Events</Link>
         <Link href="/sports-gymnasium">Sports & Gymnasium Events</Link>
       </div>
-      <Divider className='my-4'/>
+      <Divider className='my-4 bg-white'/>
       <div className='w-full flex flex-col text-center md:flex-row items-center justify-center md:justify-between gap-4  px-8 py-6 '>
         <h2 className=''>© Copyright 2023 Poornima University. <br />All rights reserved.</h2>
         <div className='flex gap-4'>
@@ -103,7 +95,7 @@ export default function Footer() {
           </Link>
         </div>
       </div>
-      <Divider className='mt-4'/>
+      <Divider className='mt-4 bg-white'/>
     </section >
   )
 }

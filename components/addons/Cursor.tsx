@@ -74,5 +74,6 @@ export default function Cursor() {
         >
             <div ref={cursorTextRef} className='cursorText text-sm font-semibold tracking-wider text-black'></div>
         </div>
+        // <div ref={cursorRef} className="hidden sm:flex fixed z-[99] mix-blend-difference top-0 left-0 pointer-events-none items-center justify-center p-4">🪁</div>
     );
 }

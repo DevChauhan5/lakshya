@@ -36,10 +36,10 @@ export default function Navbar() {
       name: "Gallery",
       href: "/#gallery",
     },
-    {
-      name: "Sponsors",
-      href: "/#sponsors",
-    },
+    // {
+    //   name: "Sponsors",
+    //   href: "/#sponsors",
+    // },
     {
       name: "Our Team",
       href: "/#ourteam",
@@ -56,7 +56,7 @@ export default function Navbar() {
         }
         </div>
       </div>
-      <div className={`${navisOpen ? 'left-0' : '-left-[400px] overfl'} fixed  block w-screen bg-white md:w-[350px] z-[60] top-0 pt-16 md:pt-0 text-left h-full justify-between transition-all duration-300 ease-in-out delay-150`}>
+      <div className={`${navisOpen ? 'left-0' : '-left-[780px]'} fixed w-screen bg-white md:w-[350px] z-[60] top-0 pt-16 md:pt-0 text-left h-full justify-between transition-all duration-300 ease-in-out delay-150`}>
         <div className={`flex  flex-col items-start justify-center text-left space-y-6 gap-4 pt-[2em] px-[2em] pb-p[2em]`}>
           {links.map((link) => (
             <Link
