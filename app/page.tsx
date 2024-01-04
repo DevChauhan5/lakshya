@@ -9,8 +9,6 @@ import Sponsors from "@/components/main/Sponsors"
 import Events from "@/components/main/Events";
 import { useEffect, useState } from "react"
 import Lenis from '@studio-freight/lenis'
-import ScrollFun from "@/components/addons/ScrollFun";
-import MusicPlayer from "@/components/addons/MusicPlayer";
 import MobGallery from "@/components/main/MobGallery";
 
 export default function Home() {
@@ -40,7 +38,6 @@ export default function Home() {
       </div>
     {/* <Sponsors /> */}
       {/* <Ourteam /> */}
-      {/* <ScrollFun /> */}
     </main>
   )
 }

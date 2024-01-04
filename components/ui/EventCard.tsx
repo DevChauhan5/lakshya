@@ -3,7 +3,8 @@ import React, { useRef, useEffect } from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import gsap from "gsap";
 
-export default function EventCard({ image }: { image: string }) {
+
+export default function EventCard({ name, image, desc }: { image: string, name: string, desc: string }) {
     const cardRef = useRef<HTMLDivElement | null>(null);
     const descriptionRef = useRef<HTMLParagraphElement | null>(null);
 
@@ -32,22 +33,30 @@ export default function EventCard({ image }: { image: string }) {
     }, []);
 
     return (
-        <Card ref={cardRef} className="py-4 relative" isHoverable={true}>
-            <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <h4 className="font-bold text-large">Event Name</h4>
-            </CardHeader>
-            <CardBody className="overflow-visible py-2">
-                <Image
-                    isZoomed
-                    isBlurred
-                    width={240}
-                    src={image}
-                    alt="Event image"
-                />
-            </CardBody>
-            <p ref={descriptionRef} className="absolute top-0 left-0 opacity-0 p-4">
-                Description goes here Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam neque mollitia odit modi sint quod atque culpa rerum praesentium, quam eaque, eum fugiat voluptate deleniti, voluptates quidem earum excepturi repellendus eligendi nostrum alias. Quod odio ab officia reprehenderit nihil nam aperiam, omnis exercitationem praesentium suscipit molestiae, sapiente blanditiis distinctio adipisci!
-            </p>
-        </Card>
+        <main>
+            <Card
+                ref={cardRef}
+                className="py-4 relative cursor-pointer"
+                isHoverable={true}
+                // isPressable={true}
+                // onClick={() => console.log(name)}
+            >
+                <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                    <h4 className="font-bold text-large tracking-wider">{name}</h4>
+                </CardHeader>
+                <CardBody className="overflow-visible py-2">
+                    <Image
+                        isZoomed
+                        isBlurred
+                        width={240}
+                        src={image}
+                        alt="Event image"
+                    />
+                </CardBody>
+                <p ref={descriptionRef} className="absolute top-0 left-0 opacity-0 p-4 tracking-wide">
+                    {desc}
+                </p>
+            </Card>
+        </main>
     );
 }

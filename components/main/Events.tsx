@@ -7,25 +7,25 @@ import Link from 'next/link';
 const EventCards = () => {
   const events = [
     {
-      url: "/events/1.gif",
+      url: "/events/1.mp4",
       title: "Cultural",
       id: 1,
       href: "/cultural"
     },
     {
-      url: "/events/2.gif",
+      url: "/events/2.mp4",
       title: "E-Sports",
       id: 2,
       href: "/e-sports"
     },
     {
-      url: "/events/3.gif",
+      url: "/events/3.mp4",
       title: "Fun & Knowledge",
       id: 3,
       href: "/fun-knowledge"
     },
     {
-      url: "/events/4.gif",
+      url: "/events/4.mp4",
       title: "Sports & Gymnasium",
       id: 4,
       href: "/sports-gymnasium"
@@ -33,7 +33,7 @@ const EventCards = () => {
   ];
 
   return (
-    <section className='bg-black flex flex-col md:flex-row gap-4 p-4'>
+    <section id="events" className='bg-black flex flex-col items-center justify-center md:flex-row gap-4 p-4'>
       {events.map((event) => {
         return(
           <Card

@@ -73,7 +73,7 @@ const Hero = () => {
     <section id="hero" ref={page} className="h-screen overflow-hidden relative">
       <VideoBg isbgvideo={isbgvideo}/>
       <div
-        className={`relative w-full h-screen flex top-0 flex-col items-center justify-center space-y-12 md:space-y-0 bg-black text-white ${isTransparent ? 'mix-blend-normal' : 'mix-blend-multiply z-40'}`}
+        className={`relative cursor-pointer select-none w-full h-screen flex top-0 flex-col items-center justify-center space-y-12 md:space-y-0 bg-black text-white ${isTransparent ? 'mix-blend-normal' : 'mix-blend-multiply z-40'}`}
         ref={heroContainer}
         onClick={handleheroAnimation}
       >

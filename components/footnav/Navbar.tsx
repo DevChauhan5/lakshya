@@ -48,7 +48,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-screen ">
-      <div className="shadow-md shadow-violet-500 flex md:hidden justify-between items-center bg-black fixed w-screen top-0 z-[65] py-3 px-[2em]">
+      <div className="shadow-md shadow-violet-500 flex md:hidden justify-between items-center bg-black fixed w-screen top-0 z-[67] py-3 px-[2em]">
         <h1 className={`text-2xl`}>Lakshya&apos;24</h1>
         <div className="cursor-pointer" onClick={()=> setNavisOpen(!navisOpen)}>
         {

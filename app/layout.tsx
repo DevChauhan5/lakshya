@@ -4,7 +4,6 @@ import './globals.css'
 import Navbar from '@/components/footnav/Navbar'
 import Footer from '@/components/footnav/Footer'
 import Credit from '@/components/addons/Credit'
-import Cursor from '@/components/addons/Cursor'
 import { Providers } from './providers'
 import MusicPlayer from '@/components/addons/MusicPlayer'
 import MusicProvider from '@/components/addons/MusicProvider'
@@ -26,10 +25,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${bebas.className} cursor-none scroll-smooth bg-black text-white no-scrollbar`}>
+      <body className={`${bebas.className} scroll-smooth bg-black text-white no-scrollbar`}>
         <Providers>
           <MusicProvider>
-          <Cursor />
           <Navbar />
           <div className="dark md:w-[96.5%] md:absolute z-0 md:right-0 bg-black">
             {children}

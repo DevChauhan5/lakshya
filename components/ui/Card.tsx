@@ -8,16 +8,14 @@ export default function Cardbox({ src, title, href }: { src: string, title: stri
     <Card
       isFooterBlurred
       radius="lg"
-      className="border-none"
+      className="border-none h-[500px] w-[350px]"
     >
       <Link href={href}>
-        <Image
-          isZoomed
-          alt="Card image"
-          className="object-fill"
-          height={600}
+        <video
           src={src}
-          width={400}
+          autoPlay
+          loop
+          className="object-fill h-fit  md:h-[500px] w-fit  md:w-[350px]"
         />
         <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
           <p className="text-lg text-white/80">{title}</p>
