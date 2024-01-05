@@ -5,7 +5,7 @@ const MobGallery = () => {
     const images = [
         '/images/1.jpg',
         '/images/2.jpg',
-        '/images/3.jpg',
+        '/images/3.jpeg',
         '/images/4.jpg',
         '/images/5.jpg',
         '/images/6.jpg',
@@ -13,7 +13,7 @@ const MobGallery = () => {
         '/images/8.jpg',
         '/images/9.jpg',
         '/images/10.jpg',
-        '/images/11.jpg',
+        '/images/11.webp',
         '/images/12.jpg',
 
     ];
@@ -50,6 +50,8 @@ const MobGallery = () => {
                             key={index}
                             className="rounded-lg shadow-lg cursor-pointer"
                             src={image}
+                            height={200}
+                            width={200}
                             alt={`Gallery ${index}`}
                             onClick={() => openModal(image)}
                         />

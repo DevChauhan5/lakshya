@@ -1,15 +1,15 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import styles from '@/styles/page.module.scss'
-import Image from 'next/image';
 import Lenis from '@studio-freight/lenis'
 import { useTransform, useScroll, motion } from 'framer-motion';
 import ReactPlayer from 'react-player';
+import Image from 'next/image';
 
 const images = [
   "1.jpg",
   "2.jpg",
-  "3.jpg",
+  "3.jpeg",
   "4.jpg",
   "5.jpg",
   "6.jpg",
@@ -24,7 +24,7 @@ const images = [
 export default function Home() {
   const gallery = useRef(null);
   const [isPlaying, setIsPlaying] = useState<boolean>(false)
-  const [dimension, setDimension] = useState({width:0, height:0});
+  const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
   const { scrollYProgress } = useScroll({
     target: gallery,
@@ -38,16 +38,16 @@ export default function Home() {
   const galleryRef = useRef(null);
 
 
-  useEffect( () => {
+  useEffect(() => {
     const lenis = new Lenis()
 
-    const raf = (time:any) => {
+    const raf = (time: any) => {
       lenis.raf(time)
       requestAnimationFrame(raf)
     }
 
     const resize = () => {
-      setDimension({width: window.innerWidth, height: window.innerHeight})
+      setDimension({ width: window.innerWidth, height: window.innerHeight })
     }
 
     window.addEventListener("resize", resize)
@@ -60,11 +60,11 @@ export default function Home() {
       },
       { threshold: 0 }
     );
-  
+
     if (galleryRef.current) {
       observer.observe(galleryRef.current);
     }
-  
+
 
     return () => {
       window.removeEventListener("resize", resize);
@@ -77,11 +77,11 @@ export default function Home() {
   return (
     <main ref={galleryRef} className={styles.main}>
       <div id='gallery' ref={gallery} className={styles.gallery}>
-        <Column images={[images[0], images[1], images[2]]} y={y}/>
-        <Column images={[images[3], images[4], images[5]]} y={y2}/>
-        <Column images={[images[6], images[7], images[8]]} y={y3}/>
-        <Column images={[images[9], images[10], images[11]]} y={y4}/>
-      {isPlaying && (<ReactPlayer
+        <Column images={[images[0], images[1], images[2]]} y={y} />
+        <Column images={[images[3], images[4], images[5]]} y={y2} />
+        <Column images={[images[6], images[7], images[8]]} y={y3} />
+        <Column images={[images[9], images[10], images[11]]} y={y4} />
+        {isPlaying && (<ReactPlayer
           url="/gallery-audio.mp3"
           playing={isPlaying}
           volume={0.8}
@@ -93,23 +93,25 @@ export default function Home() {
   )
 }
 
-const Column = ({images, y}: {images:any, y:any}) => {
+const Column = ({ images, y }: { images: any, y: any }) => {
   return (
-    <motion.div 
+    <motion.div
       className={styles.column}
-      style={{y}}
-      >
-      {
-        images.map( (src:string, i:any) => {
+      style={{ y }}
+    >
+      <Suspense fallback={<h1 className="text-5xl text-center tracking-wide p-6">Loading...</h1>}>
+        {images.map((src: string, i: any) => {
           return <div key={i} className={styles.imageContainer}>
-            <Image 
+            <Image
+              priority
+              placeholder='blur'
               src={`/images/${src}`}
               alt='image'
               fill
             />
           </div>
-        })
-      }
+        })}
+      </Suspense>
     </motion.div>
   )
 }
