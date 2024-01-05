@@ -12,7 +12,7 @@ const Days = () => {
   return (
     <div 
     id="days"
-    className="flex flex-col items-center justify-center px-[1.8em] my-10 h-screen"
+    className="flex flex-col items-center justify-center px-[1.8em] my-10 h-fit"
     >
       <h1 className='text-7xl tracking-wide my-6'>Days</h1>
       <div className='flex flex-col md:flex-row items-center justify-center'>
