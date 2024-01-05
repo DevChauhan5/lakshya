@@ -33,7 +33,9 @@ const EventCards = () => {
   ];
 
   return (
-    <section id="events" className='bg-black flex flex-col items-center justify-center md:flex-row gap-4 p-4 px-[1.8em]'>
+    <section id="events">
+    <h1 className='text-7xl tracking-wide my-6 text-center'>Events</h1>
+    <main  className='bg-black flex flex-col items-center justify-center lg:flex-row gap-4 p-4 px-[1.8em]'>
       {events.map((event) => {
         return(
           <Card
@@ -44,6 +46,7 @@ const EventCards = () => {
         />
         )
       })}
+    </main>
     </section>
   );
 };

@@ -3,16 +3,16 @@ import { Card, CardHeader, CardBody, Image } from '@nextui-org/react';
 
 const Days = () => {
   const images = [
-    '/images/days/2.jpg', 
+    '/images/days/1.png', 
     '/images/days/2.jpg', 
     '/images/days/3.jpg', 
-    '/images/days/2.jpg'
+    '/images/days/4.png'
 ];
 
   return (
     <div 
     id="days"
-    className="flex flex-col items-center justify-center px-[1.8em] my-10 h-fit lg:h-screen"
+    className="flex flex-col items-center justify-center px-[1.8em] my-10 h-fit lg:h-screen overflow-x-auto"
     >
       <h1 className='text-7xl tracking-wide my-6'>Days</h1>
       <div className='flex flex-col lg:flex-row items-center justify-center'>
