@@ -15,7 +15,7 @@ export default function Cardbox({ src, title, href }: { src: string, title: stri
           src={src}
           autoPlay
           loop
-          className="object-fill h-fit  md:h-[500px] w-fit  md:w-[350px]"
+          className="object-cover h-fit  md:h-[500px] w-fit  md:w-[350px]"
         />
         <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
           <p className="text-lg text-white/80">{title}</p>

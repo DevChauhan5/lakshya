@@ -1,195 +1,35 @@
-'use client';
+import React from 'react';
+import { Card, CardHeader, CardBody, Image } from '@nextui-org/react';
 
-import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React, { useEffect, useRef } from "react";
-import { FiArrowRight } from "react-icons/fi";
+const Days = () => {
+  const images = [
+    '/images/days/2.jpg', 
+    '/images/days/2.jpg', 
+    '/images/days/3.jpg', 
+    '/images/days/2.jpg'
+];
 
-export default function Home(){
-  gsap.registerPlugin(ScrollTrigger);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const elements = sectionRef.current ? gsap.utils.toArray(sectionRef.current.children) : [];
-
-    gsap.fromTo(elements, {
-      autoAlpha: 0, // start at 0 opacity
-    }, {
-      autoAlpha: 1, // animate to 1 opacity
-      duration: 1, // duration of the animation
-      stagger: 0.1, // stagger the start of each animation
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: 'top 80%', // start the animation when the top of the section hits 40% of the viewport
-      },
-    });
-  }, []);
-  
   return (
-    <section
-    ref={sectionRef}
-    id="days" className="bg-black p-4 md:p-8"
+    <div 
+    id="days"
+    className="flex flex-col items-center justify-center px-[1.8em] my-10 h-screen"
     >
-      <div className="mx-auto max-w-5xl">
-        <Link
-          heading="Day 1"
-          subheading="Learn what we do here"
-          imgSrc="/images/c2montreal.png"
-          href="#"
-        />
-        <Link
-          heading="Day2"
-          subheading="We work with great people"
-          imgSrc="/images/locomotive.png"
-          href="#"
-        />
-        <Link
-          heading="Day3"
-          subheading="Our work speaks for itself"
-          imgSrc="/images/officestudio.png"
-          href="#"
-        />
-        <Link
-          heading="Day4"
-          subheading="We want cool people"
-          imgSrc="/images/12.jpg"
-          href="#"
-        />
-        <Link
-          heading="Day5"
-          subheading="Incase you're bored"
-          imgSrc="/images/4.jpg"
-          href="#"
-        />
-        <Link
-          heading="Day6"
-          subheading="Incase you're bored"
-          imgSrc="/images/6.jpg"
-          href="#"
-        />
-        <Link
-          heading="Day7"
-          subheading="Incase you're bored"
-          imgSrc="/images/days/paradox.webp"
-          href="#"
-        />
+      <h1 className='text-7xl tracking-wide my-6'>Days</h1>
+      <div className='flex flex-col md:flex-row items-center justify-center'>
+      {images.map((image, index) => (
+        <Card key={index} className="p-2 m-2 my-4 relative hover:filter hover:grayscale-0 filter grayscale transition-all ease-in-out duration-200 delay-150 flex flex-col items-centers-center justify-center w-fit h-fit md:w-[300px]">
+          <CardBody className="overflow-visible py-2 flex-col items-center justify-cener">
+            <Image 
+            isBlurred
+            src={image} 
+            alt={`Day ${index + 1}`} 
+            />
+          </CardBody>
+        </Card>
+      ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-interface LinkProps {
-  heading: string;
-  imgSrc: string;
-  subheading: string;
-  href: string;
-}
-
-const Link = ({ heading, imgSrc, subheading, href }: LinkProps) => {
-  const ref = useRef<HTMLAnchorElement | null>(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const top = useTransform(mouseYSpring, [0.5, -0.5], ["40%", "60%"]);
-  const left = useTransform(mouseXSpring, [0.5, -0.5], ["60%", "70%"]);
-
-  const handleMouseMove = (
-    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
-  ) => {
-    const rect = ref.current!.getBoundingClientRect();
-
-    const width = rect.width;
-    const height = rect.height;
-
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-
-    x.set(xPct);
-    y.set(yPct);
-  };
-
-  return (
-    <motion.a
-      href={href}
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      initial="initial"
-      whileHover="whileHover"
-      className="group relative flex items-center justify-between border-b-2 border-neutral-700 py-4 transition-colors duration-500 hover:border-neutral-50 md:py-8"
-    >
-      <div>
-        <motion.span
-          variants={{
-            initial: { x: 0 },
-            whileHover: { x: -16 },
-          }}
-          transition={{
-            type: "spring",
-            staggerChildren: 0.075,
-            delayChildren: 0.25,
-          }}
-          className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
-        >
-          {heading.split("").map((l, i) => (
-            <motion.span
-              variants={{
-                initial: { x: 0 },
-                whileHover: { x: 16 },
-              }}
-              transition={{ type: "spring" }}
-              className="inline-block"
-              key={i}
-            >
-              {l}
-            </motion.span>
-          ))}
-        </motion.span>
-        <span className="relative z-10 mt-2 block text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50">
-          {subheading}
-        </span>
-      </div>
-
-      <motion.img
-        style={{
-          top,
-          left,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        variants={{
-          initial: { scale: 0, rotate: "-12.5deg" },
-          whileHover: { scale: 1, rotate: "12.5deg" },
-        }}
-        transition={{ type: "spring" }}
-        src={imgSrc}
-        className="absolute z-0 h-24 w-32 rounded-lg object-cover md:h-48 md:w-64"
-        alt={`Image representing a link for ${heading}`}
-      />
-
-      <motion.div
-        variants={{
-          initial: {
-            x: "25%",
-            opacity: 0,
-          },
-          whileHover: {
-            x: "0%",
-            opacity: 1,
-          },
-        }}
-        transition={{ type: "spring" }}
-        className="relative z-10 p-4"
-      >
-        <FiArrowRight className="text-5xl text-neutral-50" />
-      </motion.div>
-    </motion.a>
-  );
-};
+export default Days;

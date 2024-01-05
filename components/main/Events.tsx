@@ -33,7 +33,7 @@ const EventCards = () => {
   ];
 
   return (
-    <section id="events" className='bg-black flex flex-col items-center justify-center md:flex-row gap-4 p-4'>
+    <section id="events" className='bg-black flex flex-col items-center justify-center md:flex-row gap-4 p-4 px-[1.8em]'>
       {events.map((event) => {
         return(
           <Card

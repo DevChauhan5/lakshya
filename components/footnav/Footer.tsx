@@ -85,7 +85,7 @@ export default function Footer() {
       </div>
       <Divider className='my-4 bg-white'/>
       <div className='w-full flex flex-col text-center md:flex-row items-center justify-center md:justify-between gap-4  px-8 py-6 '>
-        <h2 className=''>© Copyright 2023 Poornima University. <br />All rights reserved.</h2>
+        <h2 className=''>© Copyright 2024 Poornima University. <br />All rights reserved.</h2>
         <div className='flex gap-4'>
           <Link href='https://www.instagram.com/pulakshya/'>
             <FaInstagram className="h-8 w-8 cursor-pointer" />

@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link";
-import { Button } from "../ui/button";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useState } from "react";
@@ -49,7 +48,12 @@ export default function Navbar() {
   return (
     <nav className="w-screen ">
       <div className="shadow-md shadow-violet-500 flex md:hidden justify-between items-center bg-black fixed w-screen top-0 z-[67] py-3 px-[2em]">
-        <h1 className={`text-2xl`}>Lakshya&apos;24</h1>
+        <Link 
+        href={'/'}
+        className={`text-2xl`}
+        >
+          Lakshya&apos;24
+          </Link>
         <div className="cursor-pointer" onClick={()=> setNavisOpen(!navisOpen)}>
         {
           navisOpen ? <RxCross1 size={20} /> : <RxHamburgerMenu size={20} />
@@ -71,7 +75,7 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:block text-black select-none opacity-50 pt-[4em] px-[1.8em] pb-p[2em] text-lg">
-          <p>© Copyright 2023 Poornima University</p>
+          <p>© Copyright 2024 Poornima University</p>
         </div>
       </div>
       <div
