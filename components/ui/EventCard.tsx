@@ -1,5 +1,5 @@
 'use client'
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, Suspense } from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import gsap from "gsap";
 
@@ -38,20 +38,21 @@ export default function EventCard({ name, image, desc }: { image: string, name: 
                 ref={cardRef}
                 className="py-4 relative cursor-pointer"
                 isHoverable={true}
-                // isPressable={true}
-                // onClick={() => console.log(name)}
             >
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                     <h4 className="font-bold text-large tracking-wider">{name}</h4>
                 </CardHeader>
                 <CardBody className="overflow-visible py-2">
+                    <Suspense fallback={<h1 className="text-xl text-center tracking-wide h-fit">Loading...</h1>}>
                     <Image
                         isZoomed
                         isBlurred
+                        placeholder="blur"
                         width={240}
                         src={image}
                         alt="Event image"
                     />
+                    </Suspense>
                 </CardBody>
                 <p ref={descriptionRef} className="absolute top-0 left-0 opacity-0 p-4 tracking-wide">
                     {desc}
