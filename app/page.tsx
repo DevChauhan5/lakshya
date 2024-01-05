@@ -4,8 +4,6 @@ import About from "@/components/main/About"
 import Days from "@/components/main/Days"
 import Gallery from "@/components/main/Gallery"
 import Hero from "@/components/main/Hero"
-import Ourteam from "@/components/main/Ourteam"
-import Sponsors from "@/components/main/Sponsors"
 import Events from "@/components/main/Events";
 import { useEffect, useState } from "react"
 import Lenis from '@studio-freight/lenis'
@@ -36,8 +34,6 @@ export default function Home() {
       <div className="hidden md:block">
         <Gallery />
       </div>
-    {/* <Sponsors /> */}
-      {/* <Ourteam /> */}
     </main>
   )
 }

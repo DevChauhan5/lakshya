@@ -101,7 +101,8 @@ const Hero = () => {
           />
         )}
         <p className="-translate-y-14  lg:-translate-y-32  md:tracking-[.5em] text-xl click bg-white text-black pl-3.5 pr-2 py-1 z-20">Harmony in diversity, Spectrum of talents</p>
-        <Link href="https://docs.google.com/forms/d/178Vl9c5vtdgr6NZF9AVtYfypy9gJ6NS_1EiikqFIH8c/edit?usp=drivesdk" 
+        <Link 
+        href="https://forms.gle/PRwcoo2XsoZKcQtUA" 
         target="_blank"
         className="btn-91 -translate-y-6 md:-translate-y-10 z-[51] click text-3xl">
           <span ref={registerButtonRef} onClick={() => setIsTransparent(true)}>Register Now!</span>
