@@ -36,7 +36,7 @@ export default function ESports() {
         <h1 className='px-[1.8em] text-5xl md:text-6xl font-bold text-center pt-20 md:pt-6 tracking-wide'>E-Sports Events</h1>
         <Link
           className='mx-[1.8em] text-xl border-white border-2 rounded-md px-14 py-3 my-8 hover:bg-white hover:text-black transition duration-300 ease-in-out tracking-wider'
-          href="https://www.poornima.edu.in"
+          href="https://drive.google.com/file/d/10giUJkQ4Mqp-SOkBrJ-7c-0ru6I5N4Lf/view?usp=sharing"
           target='_blank'
         >
           Check Rules

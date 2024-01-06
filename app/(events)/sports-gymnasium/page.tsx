@@ -317,7 +317,7 @@ export default function SportsGymnasium() {
         <h1 className='px-[1.8em] text-5xl md:text-6xl font-bold text-center pt-20 md:pt-6 tracking-wide'>Sports & Gymnasium Events</h1>
         <Link
           className='mx-[1.8em] text-xl border-white border-2 rounded-md px-14 py-3 my-8 hover:bg-white hover:text-black transition duration-300 ease-in-out tracking-wider'
-          href="https://www.poornima.edu.in"
+          href="https://drive.google.com/file/d/1P0a0Kq42y1Z5G7kPxErKpJMo54gXs8ZT/view?usp=sharing"
           target='_blank'
         >
           Check Rules
